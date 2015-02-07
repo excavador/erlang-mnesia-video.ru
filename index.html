@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"> 
+<head> 
+<title>erlang/otp. 2 часа видео из будущего по созданию Опердени на erlang mnesia на одном DVD.</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<style> 
+.ds {
+font-family: Verdana,sans-serif; margin:5px; padding:0px; color: #000000; font-size: 12px; font-weight: normal; text-indent:0px
+}
+.est {
+	font-family: Verdana, sans-serif; border:1px gray  solid; font-size: 11px; width:170px; height:18px;
+	background-Color:#f6f6f6; color:#424242; 
+}
+.est2 {
+	font-family: Verdana, sans-serif; border:1px gray  solid; font-size: 11px; width:170px; 
+	background-Color:#f6f6f6; color:#424242; 
+}
+.handcursor{
+cursor:hand;
+cursor:pointer;
+}
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+body {
+	background:#f8f8f8;
+	margin-top: 10 px;
+	font-family:Tahoma, Arial, Verdana, sans-serif;
+	width:100%;
+}
+.content_div {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	width: 670px;
+	position: relative;
+}
+ 
+.content_down {
+	width: 670px;
+}
+ 
+ 
+.choice_block {
+	position: absolute;
+	bottom: 20px;
+	width: 160px;
+	right: 120px;
+}
+ 
+.ft_corner {
+	border:1px solid #CCCCCC;
+	position: relative;
+	margin-top: 5px;
+}
+ 
+div.desc_pay_block {
+	margin-left: 240px;
+	text-indent: 0px;	
+}
+ 
+div.desc_pay_block p {
+	text-indent: 0px;	
+}
+ 
+.button150, .button280 {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	background-position: 0px 0px;
+	height: 25px;
+	border: 0px;
+	color: #333333;
+	cursor: pointer;
+	margin-top: 5px;
+	width: 150px;
+	background-image: url(img_template_steps/buttons/button150.gif);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+ 
+.button150:hover  {background-position: 0px 25px;}
+ 
+.ltc {background-image: url(img_template_steps/corner/corner10_01.gif);left: -1px;top: -1px;}
+.rtc {background-image: url(img_template_steps/corner/corner10_02.gif);top: -1px;right: -1px;}
+.ldc {background-image: url(img_template_steps/corner/corner10_03.gif);left: -1px;bottom: -1px;}
+.rdc {background-image: url(img_template_steps/corner/corner10_04.gif);bottom: -1px;right: -1px;}
+.ltc, .rtc, .ldc, .rdc {height: 20px; width: 10px; background-repeat: no-repeat; position: absolute;}
+ 
+.ltc1 {background-image: url(img_template_steps/corner/corner_grey10_01.gif);left: -1px;top: -1px;}
+.rtc1 {background-image: url(img_template_steps/corner/corner_grey10_02.gif);top: -1px;right: -1px;}
+.ldc1 {background-image: url(img_template_steps/corner/corner_grey10_03.gif);left: -1px;bottom: -1px;}
+.rdc1 {background-image: url(img_template_steps/corner/corner_grey10_04.gif);bottom: -1px;right: -1px;}
+.ltc1, .rtc1, .ldc1, .rdc1 {height:20px;width:10px;background-repeat: no-repeat; position: absolute;}
+ 
+ 
+.button_testimonial {
+	border: 5px solid #CC0000;
+}
+#live {	visibility:hidden;}
+ 
+.img {	border: 1px solid black;}
+ 
+h5 {font-family:Tahoma,Arial,Helvetica;font-size:13pt;font-weight:bold;color:#cc0000;text-indent:0px;}
+a:link {color:#0000FF;}
+a:visited  {color:#834283;}
+a:hover {color:#cc0000;}
+a:active {color:#834283;}
+ 
+.compp2 {font-family:Tahoma,Verdana, Arial, Helvetica, sans-serif;color:#357A0A;font-size:14pt;font-weight:bold;}
+.black {color:#000000;}
+.compp1 {font-family:Tahoma,Verdana, Arial, Helvetica, sans-serif;color:#CC0000;font-size:14pt;font-weight:bold;}
+.demo {
+border: 1px solid black;
+background-color : #E6E6FA;	
+}
+.ex {border: 1px solid #B8B8B7;}
+p.compare2 {margin:5px;text-indent: 0cm;font: normal 10px Verdana, Arial, Helvetica, sans-serif;margin-top:1px;}
+p.desc {font: normal 10pt  Tahoma,Verdana, Arial, Helvetica, sans-serif;margin: 10px;text-indent : 0cm;text-align : left;}
+p {font: normal 11pt  Tahoma,Verdana, Arial, Helvetica, sans-serif;text-indent : 1.25cm;margin:15px;margin-left:30px;	margin-right:30px;color : #000000;}
+p.curs2 {font: normal 11pt  Tahoma,Verdana, Arial, Helvetica, sans-serif;margin:15px;text-indent: 0cm;}
+.f6 {background-color:#f6f6f6;}
+.f6 p {font: bold 9pt Tahoma,Verdana, Arial, Helvetica, sans-serif;color: #000033;margin:3px;}
+.prog {border:1px solid #cccccc;margin:20px;}
+.prog h2{font: bold 11pt  Tahoma,Verdana, Arial, Helvetica, sans-serif;text-align:left;margin:20px;}
+.prog h1{font: bold 16pt  Tahoma,Verdana, Arial, Helvetica, sans-serif;margin:15px;}
+p.curs2 span.m {font: normal 10pt  Tahoma,Verdana;color: Gray;font-weight: bold;}
+.red {color:#cc0000;}
+.green {color:#357A0A;}
+.blue {color:#000066;}
+.orange {color:#F46523;} 
+h1 {color:#cc0000;text-align: center;font: bold 20pt Tahoma,Verdana, Arial, Helvetica, sans-serif;margin: 25px;}
+h2 {text-align: center;font: bold 15pt Tahoma,Verdana, Arial, Helvetica, sans-serif;margin: 25px;}
+h3.count {font: bold 13px Verdana, Arial, Helvetica, sans-serif;color: #000000;margin:20px;}
+.lesson {font-weight: bold;margin-top : 20px;margin-bottom : 5px;color: #cc0000;font-size:16px;}
+.lesson_img {margin-right: 10px;margin-left: 3px;margin-bottom : 10px;border:0px solid gray;}
+.compare2 {border: 1px solid #d8d8d8;background-color:#ffffff;margin:30px;}
+.compare2 p {text-indent :0cm;text-align:left;margin:10px;}
+.compare2 td.f6 p {text-indent :0cm;text-align:center;margin:5px;}
+.compare2 td {border: 1px solid #f1f1f1;}
+.compare2 p.compp1, .compare2 p.compp2{text-align:center;}
+.les_col {color : #000000;}
+p.les_e {margin-top:10px;margin-bottom:60px;margin-left:20px;margin-right:20px;}
+p.les_ecourse {margin:10px;margin-bottom:70px;}	
+.number {font: normal 90px Verdana, Arial, Helvetica, sans-serif;font-weight: bold;margin : 40px;color: #cc0000;text-align:center;}
+p.ps {margin-left: 70px;margin-top: 20px;text-indent: 0cm;}
+p.copy {font:10px Verdana, Arial, Helvetica, sans-serif;color:#000000; text-align:center; margin:2px;}
+p.copy a{color:#000000;}
+.testimonial {background-color:#FFFFCC;border:1px solid gray;}
+.testimonial p{font-family:Courier New,Courier,Helvetica;font-size:11pt;margin:10px;text-align: left;text-indent:0px;}	
+.testimonial a{text-decoration:none;font-family:Verdana;font-size:10px;}
+hr {width : 350px;color:gray;height : 1px;margin-top: 20px;margin-bottom: 20px;}
+.bonus_table {border : 3px dashed #cccccc;}
+p.bonus {text-indent : 0cm;font-size: 12px;margin : 5px;}
+.nd {border:1px solid #f0f0f0; background-color:#fbfbfb; margin:20px;}
+.ndc {border:1px solid #f0f0f0; background-color:#f9f9f9; margin:20px;}
+.prr {color:#666666;font-size:11px;}
+.ndw {border:1px solid #f0f0f0; margin:20px;}
+.ndw p, .nd p, .bonus_table p, p.popov2 {text-indent:0cm;}
+.lll {text-decoration:underline;}
+.listt {border:0px solid #cccccc;padding:7px;margin-left:20px;margin-right:20px;}
+.listt td{border:1px solid #c9c9c9;}
+.listt h2{margin:3px;font: bold 14pt  Tahoma,Verdana, Arial, Helvetica, sans-serif;}
+.listt p{text-indent : 0cm;margin:5px;margin-left:20px;margin-right:20px;font: normal 10pt  Tahoma,Verdana, Arial, Helvetica, sans-serif;text-align:center;}
+ 
+.compp3 {
+font-family:Tahoma,Verdana, Arial, Helvetica, sans-serif;
+color:#357A0A;
+font-size:14pt;
+font-weight:bold;
+text-indent:0cm;
+}
+ 
+.compp4 {
+	font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color:#CC0000;
+	font-size:14pt;
+	font-weight:bold;
+	text-indent:0cm;
+	text-decoration: line-through;
+}
+ 
+h3 {
+	color: #CC0000;
+	margin: 30px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.illustration {
+text-align:center;
+margin:2em 0;
+}
+.illustration p {
+    font-size:80%;
+    padding:0;
+    margin:.3em 0 0 0;
+    text-indent:0;
+}
+
+.testimonial {
+    margin:0 2em 1em 2em;
+    min-height:150px;
+}
+.testimonial img {
+    float:left;
+    margin:1em;
+}
+</style> 
+ 
+</head> 
+<body> 
+<!-- Yandex.Metrika -->
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
+<div style="display:none;"><script type="text/javascript">
+try { var yaCounter923891 = new Ya.Metrika(923891); } catch(e){}
+</script></div>
+<noscript><div style="position:absolute"><img src="//mc.yandex.ru/watch/923891"  alt="" /></div></noscript>
+<!-- /Yandex.Metrika -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15557331-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<div align="center"> 
+  <div class="content_div" align="left"> 
+  <span class="ltc1"></span><span class="rtc1"></span> 
+      <p align="left" style="font-size:12px; font-weight:bold; text-align:left; margin-left:5px; padding-left:5px;">Если Вам крайне важно  
+быстро освоить науку создания профессиональных динамических оперденей, но Вы в 
+этом ничего не смыслите, то Вы попали по адресу...</p> 
+      <h1 style="margin-left:40px; margin-right:40px;">&laquo;Я Учился Создавать Профессиональные Опердени на 
+Эрланг 23 долгих года, А Вы Можете Познать Эту Науку Всего За <span class="lll">6,66 
+Часа...</span>&raquo;</h1> 
+      <h2 style="margin-left:50px; margin-right:50px; margin-top:20px;">Секреты Создания Профессиональных Эрланг 
+Оперденей  С Использованием Базы Данных Mnesia, О Которых Вам Нигде Не Расскажут В 
+Более Доступной Форме Чем Здесь. Да и Ваще Не Расскажут. <span class="lll">13&nbsp;Видеоуроков О 
+Том, КАК Делать, А Не ЧТО Делать.</span></h2> 
+      <p style="text-indent:0px;">&nbsp;</p> 
+      <img src="main.png" align="left" style="margin-right:10px; margin-top:10px; margin-left:25px; border:1px solid black"> 
+      <p align="right">Прогресс не стоит на месте. Сегодня обычные бумажные самоучители 
+уступают место более эффективным, наглядным и результативным методикам.</p> 
+      <p align="right">Благодаря технологии экранного видео, сегодня Вы можете изучить 
+материал и начать применять его на практике в три раза быстрее своего конкурента, 
+который будет пыхтеть над книгами и рвать на себе волосы от того, что не может 
+добиться нужного результата.</p>
+      <p align="right"><strong>От:</strong> Олег (всех Олегов, сразу)</p> 
+      <p align="right"><strong>Тема:</strong> 6,66 часовой из будущего видеокурса по Erlang и Mnesia.</p> 
+      <p>&nbsp;</p> 
+      <p><strong>Если Вы попали на данную страницу, то скорее всего Вы хотите научиться 
+создавать динамические опердени, либо усовершенствовать свой свою старую и 
+сделать его более функциональным, а значит более <del>чистой и мутабельной</del> 
+простой и прибыльной.</strong></p>
+      <p>И что самое главное, Вы не хотите тратить на изучение этого дела много времени, 
+которого и так ни на что не хватает!</p> 
+      <p>Если я прав, то информация из будущего, представленная на этой странице 
+будет очень важна и интересна для Вас.</p>
+
+<div class="illustration">
+    <img heigth="20%" width="20%" src="p197.png"/>
+    <p>Типичная опердень</p>
+<p>&laquo;Опердень кодогенерировали-кодогенерировали, кодогенерировали-кодогенерировали, кодогенерировали-кодогенерировали, да не выкодогенерировали&raquo;  — знакомая проблема?</p>
+<p><b>Мы знаём её решение!</b></p>
+</div>
+
+<div class="illustration">
+    <img src="popov.jpg" />
+    <p><noindex><a href="http://php-mysql-video.ru/">Обычный PHP-программист</a></noindex> — полное отсутствие вкуса</p>
+</div>
+
+<div class="illustration">
+      <img src="z.jpg" width="50%" heigth="50%" />
+      <p>Haskell-программист — поднимает штангу именем теории категорий</p>
+</div>  
+<div class="illustration">
+      <img src="lev2.jpg"/>
+      <p>Erlang-программисты — заботливые отцы, а значит их любят девушки!</p>
+</div>
+<div style="text-align: center; margin: 2em 0;">
+  <h2>Только Сегодня! Только Для Вас! СОВЕРШЕННО&nbsp;БЕСПЛАТНО! Вступительный Видеоролик К Курсу «Секреты Создания Профессиональных Эрланг Оперденей С Использованием Базы Данных Mnesia, О Которых Вам Нигде Не Расскажут В Более Доступной Форме Чем Здесь. Да и Ваще Не Расскажут!»</h2>
+ <object width="450" height="338"><param name="video" value="http://static.video.yandex.ru/lite/zabivator/72xd72c8bh.2413/"/><param name="allowFullScreen" value="true"/><param name="scale" value="noscale"/><embed src="http://static.video.yandex.ru/lite/zabivator/72xd72c8bh.2413/" type="application/x-shockwave-flash" width="450" height="338" allowFullScreen="true" scale="noscale"> </embed></object>
+      <p style="text-indent:0"><a href="video.avi">Скачать видео [avi, 10Mb]</a></p>
+  <div style="margin:1em">
+      <small>Для получения DVD с полным курсом отправьте SMS на какой-нибудь короткий номер.</small>
+       </div>
+       
+<div> 
+
+<h2>Отзывы уже попробовавших и ОЦЕНИВШИХ наш Курс:</h2>
+<div class="testimonial">
+<img src="t1.jpg">
+<p>
+Спасибо Вам за гениальный курс.<br />
+Я теперь представить себе не могу, как я раньше жил без него. Чуть не потратил свою жизнь зря...<br />
+Буду советовать родным и знакомым.<br />
+Это не курс, это БОМБА!<br />
+</p>
+</div>
+<div class="testimonial">
+<img src="t2.jpg">
+<p>
+Штан-гу!<br />
+Штан-гу!<br />
+Штан-гу!<br />
+</p>
+</div>
+<div class="testimonial">
+<img src="t3.jpg">
+<p>
+Вот, отлично. Простым понятным языком для рабочего класса. Предлагаю оформить совместное предприятие по регистрации и оценке оперденей.
+Будем брать комиссию 10% от оплаты чужих оперденей и рассказывать заказчикам почему эти опердени нужны. План 100% работает, свяжись со мной по телефону +37529-***-**-** (номер дать не могу, боюсь завистливых конкурентов).
+P.S. Никаких имён, нас прослушивают и прочитывают
+</p>
+</div>
+<div class="testimonial">
+<img src="t4.jpg">
+<p>
+"Ваш курс пробудил во мне тягу к творчеству, тягу творить новое и улучшать 
+старое, быть полезным обществу и окружающим, я не понимаю, как я жил без него 
+все эти годы."
+
+
+
+Добрый день Олег!
+
+Где же я был раньше, почему не знал о Вашем курсе? Неделю назад получил Ваш диск и могу с уверенностью сказать - это ОНО!!! ТО, чего не хватало всю мою жизнь. Та самая основа гармоничного существования человека среди себе подобных, не во вред, а во благо.
+
+Ваш курс пробудил во мне тягу к творчеству, тягу творить новое и улучшать старое, быть полезным обществу и окружающим, я не понимаю, как я жил без него все эти годы.
+
+Знания, которые Вы передаёте нам помогли мне убедить моих заказчиков в том, что они нашли нужного им человека, что их бизнес будет процветать не через 3 года, а гораздо раньше - через пару дней. Мало того - это сработало! В течении пары дней, применяя erlang + mnesia я смог создать опердень, удовлетворяющую все пожелания клиентов. Более того! Через неделю использования продукта они сами обратились ко мне с просьбой добавить новый функционал, внедрять который они планировали не ранее, чем через 3 года после начала своего дела. Поразительно! Творческий порыв с моей стороны привёл к потоку фантазии и взрыву идей со стороны заказчиков. А они между прочим не студенты, а взрослые люди. Вот так я поверил в Вас, Олег, и в качество Вашего продукта. Примите благодарность от моих довольных клиентов и лично от меня. Чтобы я делал, где был (наверно тягал бы штангу), елси бы не Ваш курс, открывший мне глаза на истинное полождение дел в это мире.
+
+Вообще, я щитаю, этот курс достоин называться лучшим медийным обучающим продуктом тысячелетия!
+
+Всё, пора бежать, звонят новые клиенты, спешу на встречу.
+Ещё раз СПАСИБО!
+</p>
+</div>
+<div class="testimonial">
+<img src="t5.jpg">
+<p>
+Здравствуйте, Олег!
+Я всю жизнь хотел начать зарабатывать бапки, но не знал как правильно это делать. Я работал курьером, но пацаны говорят, что это отстойная работа, т.к. задача о курьере NP-полная (полная нереальных пи..цов), поэтому реальных денег она не принесет. Я пробывал делать динамические сайты на РНР и МуSQL, но младший брат нашел мои пароли и стер все сайты, я только зря потратил 1799 рублей на курс того поца в пинжаке. Я пробывал самостаятельно выучить теорию котегорий, но непонел, почему при построении котегории, где объекты - типы данных, а морфизмы - функции, из варианта типизированного лямбда-исчисления на комбинаторах получается замкнутая симитричная моноидальная катигория (подобно Hilb, где где объекты - канечномерные гильбертовы пространства с обычным тензорным произведением, а морфизмы - линейные операторы), но не декартова, каковой является Set. Это завело меня в тупик, и я начал пить. Но встретив Ваш курс "Секреты Создания Профессиональных Эрланг Оперденей С Использованием Базы Данных Mnesia", я понел, что спасен! Это совершенно замечательный курс, он открыл мне глаза, теперь я знаю как надо делать бапки, а также как производить горячую замену кода, выполняющего в этом момент расчет баланса предприятия. Я рекомендовал Ваш курс всем пацанам на раёне, они уже пошли добывать на него деньги, что резко подняло уровень преступности, но это ненадолго, и я уверен, что того стоит.
+</p>
+</div>
+<div class="illustration">
+  <a href="http://zabivator.livejournal.com/394316.html">прочитать другие отзывы благодарных пользователей </a>
+</div>
+<div class="illustration">
+  <a href="http://www.linux.org.ru/news/doc/4728205?lastmod=1270146025076">прочитать обсуждение на linux.org.ru</a>
+</div>
+<div class="illustration">
+  <a href="http://habrahabr.ru/blogs/erlang/89682/#comments">прочитать обсуждение на habrahabr.ru</a>
+</div>
+ <script type="text/javascript">
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+ </script>
+ <script type="text/javascript">
+ try {
+ var pageTracker = _gat._getTracker("UA-15557331-1");
+ pageTracker._trackPageview();
+ } catch(err) {}</script>
+</body> 
+</html> 
